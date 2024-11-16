@@ -1,6 +1,4 @@
 'use client';
-import { Container } from "@chakra-ui/react";
-import Header from "./header/component";
 import { useEffect } from "react";
 
 export default function Home() {
@@ -16,7 +14,7 @@ export default function Home() {
 
         console.log(subscription);
 
-        const res = await fetch("http://localhost:8080/api/notifications/subscribe", {
+        const res = await fetch("https://78db-2409-40c4-1175-a16f-f8f9-181-3abd-3c46.ngrok-free.app/api/notifications/subscribe", {
           method: "POST",
           body: JSON.stringify(subscription),
           headers: {
@@ -31,8 +29,8 @@ export default function Home() {
     }
   }, []);
   return (
-    <Container>
-      <Header></Header>
-    </Container>
+   <div>
+      <h1>Hello World!</h1>
+   </div>
   );
 }
