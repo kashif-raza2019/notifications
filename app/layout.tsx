@@ -1,4 +1,3 @@
-import { Provider } from "@/components/ui/provider"
 
 export const metadata = {
   title: 'One-Queue',
@@ -8,9 +7,9 @@ export const metadata = {
 export default function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
   return (
-    <html suppressHydrationWarning>
+    <html>
       <body>
-        <Provider>{children}</Provider>
+      {children}
       </body>
     </html>
   )
