@@ -1,9 +1,8 @@
 'use client';
 import { useEffect } from "react";
-import {SERVER_HOST_URL, VAPID_PUBLIC_KEY} from './imports';
 
-console.info("PUBLIC VAPID KEY", VAPID_PUBLIC_KEY);
-console.info("PUBLIC SERVER ONE QUEUE DEV", SERVER_HOST_URL);
+const SERVER_HOST_URL = process.env.NEXT_PUBLIC_SERVER_HOST;
+const VAPID_PUBLIC_KEY = process.env.NEXT_PUBLIC_VAPID_PUBLIC;
 
 export default function Home() {
   useEffect(() => {
