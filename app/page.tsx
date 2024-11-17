@@ -1,5 +1,6 @@
 'use client';
 import { useEffect } from "react";
+import {SERVER_HOST_URL, VAPID_PUBLIC_KEY} from './imports';
 
 export default function Home() {
   useEffect(() => {
@@ -9,12 +10,12 @@ export default function Home() {
 
         const subscription = await register.pushManager.subscribe({
           userVisibleOnly: true,
-          applicationServerKey: "BGtgqmGcnKQrrQYZgbHuOeB49xmRw0A4N2PBcfryo4qsqLKUiUZlLBbubZ4ioyJ7Jw_GEjW3TxBGRv-2kXrN1Qs",
+          applicationServerKey: VAPID_PUBLIC_KEY,
         });
 
         console.log(subscription);
 
-        const res = await fetch("https://78db-2409-40c4-1175-a16f-f8f9-181-3abd-3c46.ngrok-free.app/api/notifications/subscribe", {
+        const res = await fetch(`${SERVER_HOST_URL}api/notifications/subscribe`, {
           method: "POST",
           body: JSON.stringify(subscription),
           headers: {
