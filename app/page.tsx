@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useEffect } from "react";
 
 const SERVER_HOST_URL = process.env.NEXT_PUBLIC_SERVER_HOST;
@@ -17,13 +17,16 @@ export default function Home() {
 
         console.log(subscription);
 
-        const res = await fetch(`${SERVER_HOST_URL}api/notifications/subscribe`, {
-          method: "POST",
-          body: JSON.stringify(subscription),
-          headers: {
-            "content-type": "application/json",
-          },
-        });
+        const res = await fetch(
+          `${SERVER_HOST_URL}api/notifications/subscribe`,
+          {
+            method: "POST",
+            body: JSON.stringify(subscription),
+            headers: {
+              "content-type": "application/json",
+            },
+          }
+        );
 
         const data = await res.json();
         console.log(data);
@@ -32,8 +35,6 @@ export default function Home() {
     }
   }, []);
   return (
-   <div>
-      <h1>One-Queue</h1>
-   </div>
+      <h2>Hello World!</h2>
   );
 }

@@ -1,7 +1,0 @@
-const SERVER_HOST_URL = process.env.NEXT_PUBLIC_SERVER_HOST
-const VAPID_PUBLIC_KEY = process.env.NEXT_PUBLIC_VAPID_PUBLIC
-
-module.exports = {
-    SERVER_HOST_URL,
-    VAPID_PUBLIC_KEY
-}
